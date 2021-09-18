@@ -16,10 +16,10 @@ checkButton.addEventListener('click', function validateBillandCashAmount()
           calculateChange(amountToBeReturned);
 
       } else {
-          showMessage("The cash provided should atleast be equal to the bill amount.");
+          showMessage("The cash given should atleast be equal to the bill amount.");
       }
   } else {
-      showMessage("Bill amount should be greater than 0.");
+      showMessage("Enter the appropriate bill amount.");
   }
 });
 
@@ -36,11 +36,12 @@ function calculateChange(amountToBeReturned)
 
 function hideMessage()
 {
-    message.style.display = "none;"
+    message.style.display = "none";
 }
 
 function showMessage(errorMessage)
 {
     message.style.display = "block";
+    message.style.color= "red";
     message.innerText = errorMessage;
 }
