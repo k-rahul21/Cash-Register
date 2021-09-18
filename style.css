@@ -43,11 +43,11 @@ label {
   font-weight: bold;
 }
 
-#clear-button,
 #check {
   background-color: var(--primary-color);
   color: var(--white-color);
-  width: 5rem;
+  width: 10rem;
+  font-size: 1.2rem;
   padding: 0.5rem 1rem;
   margin: 1rem 0 0 0;
   border-radius: 0.5rem;
