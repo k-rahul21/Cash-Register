@@ -43,7 +43,7 @@ label {
   font-weight: bold;
 }
 
-#check {
+#calculate {
   background-color: var(--primary-color);
   color: var(--white-color);
   width: 10rem;
