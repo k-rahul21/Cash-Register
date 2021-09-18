@@ -8,8 +8,9 @@
     <title>Cash Register Manager</title>
   </head>
   <body>
+    <h1 class="main-heading">Cash Register Manager</h1>
     <div class="container">
-      <h1 class="heading">Cash Register Manager</h1>
+      <h2 class="heading">How does it works?</h2>
       <p class="description">
         Enter the bill amount and cash given by the customer.
       </p>
@@ -18,12 +19,12 @@
         returned to your customer.
       </p>
       <p class="description">
-        Available Currencies: Rs.1,5,10,20,100,500,2000.
+        Available Currencies: Rs.1, 5, 10, 20, 100, 500, 2000.
       </p>
       <label for="bill-amount">Bill Amount:</label>
-      <input id="bill-amount" type="number" placeholder="Enter bill amount" />
-      <label for="cash-given">Cash Given</label>
-      <input id="cash-given" type="number" placeholder="Enter cash amount" />
+      <input id="bill-amount" type="number" />
+      <label for="cash-given">Cash Given:</label>
+      <input id="cash-given" type="number" />
       <button id="check">Check</button>
       <p id="error-message"></p>
       <table class="change-table">
@@ -31,25 +32,34 @@
           Return Change
         </caption>
         <tr>
+          <th>Notes</th>
           <th>No. of Notes</th>
-          <td class="no-of-notes"></td>
-          <td class="no-of-notes"></td>
-          <td class="no-of-notes"></td>
-          <td class="no-of-notes"></td>
-          <td class="no-of-notes"></td>
-          <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+          <td>2000</td>
           <td class="no-of-notes"></td>
         </tr>
         <tr>
-          <th>Notes</th>
-          <td>2000</td>
-          <td>500</td>
-          <td>100</td>
-          <td>20</td>
-          <td>10</td>
-          <td>5</td>
-          <td>1</td>
-        </tr>
+            <td>500</td>
+            <td class="no-of-notes"></td>
+          </tr>
+          <tr>
+            <td>100</td>
+            <td class="no-of-notes"></td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td class="no-of-notes"></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td class="no-of-notes"></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="no-of-notes"></td>
+          </tr>
+          </td>
       </table>
     </div>
     <script src="index.js"></script>
