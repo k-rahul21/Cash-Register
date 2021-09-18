@@ -1,14 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 * {
   margin: 0;
   padding: 0;
 }
 
+:root {
+  --primary-color: #111827;
+  --secondary-color: #d1d5db;
+  --white-color: #fff;
+}
+
 body {
+  line-height: 2;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+}
+
+.main-heading {
   text-align: center;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
   width: 50vw;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  margin: auto;
+}
+
+#bill-amount,
+#cash-given {
+  width: 12vw;
+  height: 3vh;
+  padding: 0.5rem;
+  border: 0 solid var(--white-color);
+}
+
+label {
+  font-weight: bold;
+}
+
+#clear-button,
+#check {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: 5rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0 0 0;
+  border-radius: 0.5rem;
+  border: 1px solid var(--white-color);
+}
+
+caption {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--primary-color);
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+th {
+  font-weight: bold;
 }
