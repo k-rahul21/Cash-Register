@@ -1,47 +1,54 @@
 const billAmount = document.querySelector("#bill-amount");
-const cashGiven = document.querySelector("#cash-given");
-const checkCalculate = document.querySelector("#calculate");
+const cashGiven = document.querySelector("#cash-given"); 
+const buttonCalculate = document.querySelector("#calculate");
 const message = document.querySelector("#error-message");
-const noOfNotes = document.querySelectorAll(".no-of-notes");
+let noOfNotes = document.querySelectorAll(".no-of-notes");
 
-const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
+const currency = [2000, 500, 100, 20, 10, 5, 1];
 
-checkCalculate.addEventListener('click', function validateBillandCashAmount()
+let bill, cash, diff=0, i;
+
+hideMessage();
+buttonCalculate.addEventListener('click', showMessage);
+
+function showMessage()
 {
-    hideMessage();
-    if(billAmount.value > 0) {
-      if(cashGiven.value >= billAmount.value)
-      {
-          const amountToBeReturned = cashGiven.value - billAmount.value;
-          calculateChange(amountToBeReturned);
+    if( cashGiven.value === ''  || cashGiven.value <= 0  || billAmount.value === '' || billAmount.value <= 0 ) {
+        displayMessage("Enter the appropriate amount.");
+    } else {
+        bill = parseInt(billAmount.value);
+        cash = parseInt(cashGiven.value);
+        diff = cash-bill;
 
-      } else {
-          showMessage("The cash given should atleast be equal to the bill amount.");
-      }
-  } else {
-      showMessage("Enter the appropriate bill amount.");
-  }
-});
-
-function calculateChange(amountToBeReturned)
-{
-    for(let i=0; i<availableNotes.length; i++)
-    {
-        const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
-        amountToBeReturned %= availableNotes[i];
-        noOfNotes[i].innerText =  numberOfNotes;
+        if(cash === bill)
+        {
+         displayMessage("No need to give change.");
+        } else if(cash < bill){
+            displayMessage("Cash given cannot be less than bill amount.");
+        } else {
+         calculateChange(diff);
+        }
     }
 }
 
+function calculateChange(difference)
+{
+    displayMessage("Return amount is to be: " + "Rs. " + diff);
+    for(i = 0; i<currency.length; i++)
+        {
+            noOfNotes[i].innerHTML = Math.trunc(difference / currency[i]);
+            difference  %= currency[i];
+        }
+}
 
 function hideMessage()
 {
     message.style.display = "none";
 }
 
-function showMessage(errorMessage)
+function displayMessage(msg)
 {
     message.style.display = "block";
-    message.style.color= "red";
-    message.innerText = errorMessage;
+    message.style.color = "red";   
+    message.innerHTML = msg; 
 }
